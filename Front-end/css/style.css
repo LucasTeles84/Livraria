@@ -1,0 +1,255 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(#221fd5, #0080ff);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+    color: #1eff30;
+}
+
+.titulo_page {
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+.acoes {
+    display: flex;
+    gap: 25px;
+}
+
+.acoes_user {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.input_login {
+    display: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    visibility: hidden;
+    z-index: 10;
+    margin: 20px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.input_login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    visibility: hidden; 
+    z-index: 10;
+    width: 300px; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%;  
+    transform: translate(-50%, -50%); 
+}
+
+.input_login.show {
+    visibility: visible;
+}
+
+.acoes_user:hover + .input_login {
+    visibility: visible;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .login-form h2 {
+        font-size: 1.5rem;
+    }
+}
+
+#principal {
+    width: 500px;
+    height: auto;
+    background-color: #fff;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 2rem;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+#principal h1 {
+    padding-top: 20px;
+    text-align: center;
+    background-color: #000000;
+    color: #1eff30;
+    font-family: Verdana, sans-serif;
+    font-size: 1.5rem;
+}
+
+form {
+    width: 100%;
+}
+
+
+#principal label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#principal input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#principal input:focus,
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+#subtitle {
+    height: 100px;
+    resize: none;
+}
+
+#salvar {
+    padding: 10px;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    color: #1eff30;
+    background-color: #000000;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#salvar:hover {
+    background-color: #06b6de;
+    color: #080808;
+}
+
+#listLivros {
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    margin: 50px auto;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+#listLivros h1 {
+    padding: 20px;
+    text-align: center;
+    background-color: #0a0a0a;
+    color: #1eff30;
+    font-family: Verdana, sans-serif;
+    font-size: 1.5rem;
+}
+
+#listLivros .linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #06b6de;
+}
+
+.dados {
+    display: flex;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+.dados div {
+    background-color: #a7c8bd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dados img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.dados img:hover {
+    opacity: 0.7;
+}
+
+header,
+footer {
+    width: 100%;
+    background-color: #000;
+    color: #07c3f7;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer {
+    height: 80px;
+}
+
+footer span {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #07c3f7;
+    display: block;
+    margin: auto;
+    font-size: 1rem;
+}

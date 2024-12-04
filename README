@@ -1,0 +1,134 @@
+
+### Guia de Estrutura de Diretórios - Projeto API de Livros
+
+#### **Diretório: `controllers/`**
+- **Função**: Fazem a intermediação entre as `rotas`, os `serviços` e os `modelos`. São responsáveis pela manipulação de requisições HTTP e implementam validações básicas.
+- **Exemplo de funcionalidade**: Métodos como `listarLivros`, `criarLivro`, `editarLivro` e `removerLivro`.
+
+#### **Diretório: `database/`**
+- **Função**: Contém a configuração da conexão com o banco de dados.
+- **Exemplo de conteúdo**: Arquivos para configurar o ORM ou a conexão direta com bibliotecas como `Sequelize`, `Prisma` ou `TypeORM`.
+
+#### **Diretório: `helpers/`**
+- **Função**: Reúne funções utilitárias que são utilizadas em diversas partes do projeto.
+- **Exemplo de funcionalidade**: Geração de UUIDs, validações de CPF/CNPJ, formatação de strings ou datas.
+
+#### **Diretório: `migrations/`**
+- **Função**: Scripts responsáveis por criar, atualizar ou remover tabelas do banco de dados.
+- **Exemplo de conteúdo**: Arquivos para adicionar a tabela `livros` ou alterar a coluna `preço`.
+
+#### **Diretório: `models/`**
+- **Função**: Define as entidades e suas relações com o banco de dados.
+- **Exemplo de conteúdo**: Estruturas como `Livro`, `Usuário` com campos e associações.
+
+#### **Diretório: `repository/`**
+- **Função**: Responsável por interações diretas com o banco de dados, incluindo operações CRUD.
+- **Exemplo de funcionalidade**: Métodos como `buscarLivros`, `salvarLivro`, `excluirLivro`.
+
+#### **Diretório: `routes/`**
+- **Função**: Mapeia as URLs para os métodos apropriados nos controladores.
+- **Exemplo de rotas**: `GET /livros`, `POST /livros`, `PUT /livros/:id`, `DELETE /livros/:id`.
+
+#### **Diretório: `services/`**
+- **Função**: Contém a lógica de negócios do projeto, realizando validações e cálculos.
+- **Exemplo de funcionalidade**: Validação de duplicação antes de criar um livro, cálculos de descontos.
+
+#### **Arquivo: `server.ts`**
+- **Função**: Ponto inicial do projeto. Configura middleware, rotas e inicializa o servidor.
+- **Exemplo de tarefas**: Configurar o `Express`, habilitar `CORS`, iniciar o servidor na porta especificada.
+
+---
+
+### **Rotas Disponíveis**
+
+#### **URL BASE**: `http://localhost:3000`
+
+#### **Livros**:
+- **POST**: Criar livro - `/v2/livraria/livro`
+  ```json
+  {
+    "title": "Título",
+    "subtitle": "Subtítulo",
+    "image": "URL da imagem",
+    "price": "Preço"
+  }
+  ```
+
+- **PUT**: Atualizar livro - `/v2/livraria/atualizar/livro/:id`
+  ```json
+  {
+    "title": "Novo título",
+    "subtitle": "Novo subtítulo",
+    "image": "URL da nova imagem",
+    "price": "Novo preço"
+  }
+  ```
+
+- **GET**: Listar livros - `/v2/livraria/livros`
+  ```json
+  {
+    "books": [
+      {
+        "title": "Título",
+        "subtitle": "Subtítulo",
+        "image": "URL da imagem",
+        "price": "Preço"
+      }
+    ]
+  }
+  ```
+
+- **GET**: Buscar livro por ID - `/v2/livraria/livros/:id`
+
+- **DELETE**: Remover livro - `/v2/livraria/excluir/livro/:id`
+
+#### **Usuários**:
+- **POST**: Registrar usuário - `/register`
+  ```json
+  {
+    "email": "email@exemplo.com",
+    "password": "senha",
+    "name": "Nome completo"
+  }
+  ```
+
+- **POST**: Login - `/login`
+  ```json
+  {
+    "email": "email@exemplo.com",
+    "password": "senha"
+  }
+  ```
+
+---
+
+### **Como Rodar o Projeto**
+
+1. Acesse o diretório do projeto:
+   ```bash
+   cd Back-end
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+3. Inicie o backend:
+   ```bash
+   npm start
+   ```
+
+4. Para o frontend, acesse o diretório da interface administrativa:
+   ```bash
+   cd Front-end
+   ```
+
+5. Use o plugin "Live Server" do VS Code para rodar a interface.
+
+6. Pronto! A aplicação estará em funcionamento. Antes de usar, crie uma conta e faça login.
+
+---
+
+**Desenvolvido por**:
+- Lucas lima teles silva - 58970
